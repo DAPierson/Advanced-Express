@@ -1,0 +1,49 @@
+body {
+ 
+}
+
+.formContainer {
+    position: absolute;
+    width: 60%;
+    left: 15em;
+    
+}
+
+#chirpContainer{
+    position: absolute;
+top: 30em;
+left:15em;
+width:60%;
+border: solid grey;
+border-width: 2px;
+
+}
+
+
+/* .d-flex{
+    border: solid black;
+    border-width: 2px;
+} */
+ .mb-1{
+    border-bottom:solid grey;
+    border-width: 1px;
+    position: relative;
+
+} */
+
+/* .list-group{
+    border: solid black;
+    border-width: 1px;
+} */
+
+.block{
+    width: 20%;
+    align-self: right;
+    position: absolute;
+}
+
+.btn-danger{
+  
+    
+    
+}
