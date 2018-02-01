@@ -5,7 +5,6 @@ let delChirp = (id) => {
     }).then(() => {
         $('#chirpContainer').empty();
         loadPage();
-        console.log('chirp deleted')
     })
 }
 
@@ -27,6 +26,8 @@ let updateChirp = (user, text, id) => {
     }).then(() => {
         $('#chirpContainer').empty();
         loadPage();
+    }).catch((err)=>{
+        console.log(err);
     })
 }
 
@@ -39,15 +40,15 @@ let loadPage = () => {
         dataType: 'json'
 
     }).then((chirps) => {
-        console.log(chirps);
         let keys = Object.keys(chirps);
         for (let key of keys) {
             if (key !== 'nextid') {
-                console.log(chirps[key].user, chirps[key].text, key);
                 createChirp(chirps[key], key);
 
             }
         }
+    }).catch((err)=>{
+        console.log(err);
     })
 }
 
@@ -84,7 +85,6 @@ let createChirp = (chirps, key) => {
         let text = $(`#editChirp${key}`).val();
         let user = $(`#editUser${key}`).val();
         let newId = this.id.split('-').pop();
-        console.log(user, text, newId);
         updateChirp(user, text, newId);
         $(`#modal${key}`).modal('hide');
     })
